@@ -1,0 +1,65 @@
+/* Fonts from google because I am a whore */
+/* H1: Nova Cut H2: Nova Oval P:  Averia Serif Libre */
+@import url("https://fonts.googleapis.com/css2?family=Nova+Cut&family=Nova+Oval&family=Averia+Serif+Libre:ital,wght@0,200;0,400;0,700;1,400;1,700&&display=swap");
+/* Page dimensions and shit */
+/* Colors */
+:root {
+  font-size: 14pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Averia Serif Libre", sans-serif;
+  background-color: #ddd;
+  font-weight: 400;
+}
+
+header {
+  display: grid;
+  grid-template: "title hamburger"
+                 "menu menu";
+  border-bottom: 1px solid gray;
+}
+
+header #hamburger-helper {
+  grid-area: hamburger;
+}
+
+body {
+  min-width: 375px;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nova Oval", sans-serif;
+  color: #777;
+  background: linear-gradient(to right, #eaeaea, transparent);
+  border-radius: 0.5em;
+  margin-block-start: 1.5em;
+  margin-left: 0.5em;
+}
+
+header h1 {
+  grid-area: "title";
+  font-family: "Nova Cut";
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px gray;
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
