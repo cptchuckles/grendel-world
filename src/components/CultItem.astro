@@ -1,0 +1,43 @@
+---
+const { icon, url, label } = Astro.props;
+const hostname = url.split('/')[2];
+---
+
+<li class="cult-item">
+	<a target="_blank" href={url}>
+		<img src={icon} alt={`${hostname}: ${label}`} />
+		{label}
+	</a>
+</li>
+
+<style>
+	.cult-item {
+		display: block;
+		margin: 0.4em 0;
+		padding: 0;
+	}
+
+	img {
+		margin: 0 0.4em 0 0;
+		height: 1.5em;
+		width: 1.5em;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		color: #ccc;
+		margin: 0;
+		padding: 0.4em 1em 0.4em 0.4em;
+		text-decoration: none;
+		background-color: #444;
+		color: #ccc;
+		border-radius: 0.2em;
+		transition: all 0.1s ease-in-out;
+	}
+	
+	a:hover {
+		background-color: #555;
+		color: white;
+	}
+</style>

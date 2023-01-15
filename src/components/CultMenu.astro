@@ -1,60 +1,97 @@
 ---
+import CultItem from "./CultItem.astro";
 ---
 
 <div class="cult">
 	<input type="checkbox" id="join" aria-label="Expand cult links" />
-	<ul>
-		<li>Jitsi Meet instance</li>
-		<li>@pt24grendel</li>
-		<li>github: cptchuckles</li>
-		<li>gitlab: cptchuckles</li>
-		<li>'electronic' mail???</li>
-	</ul>
+	<div class="list-holder">
+		<ul>
+			<CultItem
+				icon="/github-logo.svg"
+				url="https://github.com/cptchuckles"
+				label="cptchuckles"
+			/>
+			<CultItem
+				icon="/gitlab-logo.svg"
+				url="https://gitlab.com/cptchuckles"
+				label="cptchuckles"
+			/>
+			<CultItem
+				icon="/twitter-logo.svg"
+				url="https://twitter.com/pt24grendel"
+				label="@pt24grendel"
+			/>
+			<CultItem
+				icon="/yt-logo.svg"
+				url="https://youtube.com/channel/UCC6f_N9nz_YsOcvyuLSbXXQ"
+				label="klayperson"
+			/>
+			<CultItem
+				icon="/jitsi-logo.svg"
+				url="https://meet.grendel.world"
+				label="Jitsi Meet instance"
+			/>
+			<CultItem
+				icon="/Gnome-envelope.svg"
+				url="#"
+				label="'electronic' mail???"
+			/>
+		</ul>
+	</div>
 </div>
 
 <style>
-.cult ul {
-	display: block;
-	padding-left: 3em;
-	background-color: #666;
-	color: #ddd;
-	margin: 0;
-	max-height: 0;
-	overflow-y: clip;
-	transition: max-height 0.1s ease-in-out;
-}
-.cult input#join:checked ~ ul {
-	max-height: 6em;
-}
-.cult input#join {
-	position: relative;
-	appearance: none;
-	cursor: pointer;
-	padding-left: 1em;
-}
-.cult input#join::before {
-	font-family: "Nova Oval", sans-serif;
-	font-size: 1.2rem;
-	font-weight: 700;
-	content: "Join my cult!";
-	color: #666;
-}
-.cult input#join::after {
-	position: absolute;
-	width: 0.9em;
-	height: 0.9em;
-	top: calc(50% - 0.7em);
-	left: 105%;
-	display: block;
-	content: " ";
-	border: 4px solid #555;
-	border-left: 0;
-	border-bottom: 0;
-	border-radius: 2px;
-	transform: rotate(45deg);
-	transition: transform 0.1s ease-in-out;
-}
-.cult input#join:checked::after {
-	transform: rotate(135deg);
-}
+	.cult {
+		background-color: #333;
+	}
+	.cult .list-holder {
+		margin: 0;
+		padding-left: 2em;
+		color: #ddd;
+	}
+	.cult ul {
+		display: block;
+		padding: 0;
+		margin: 0;
+		max-height: 0;
+		width: fit-content;
+		padding-right: auto;
+		overflow-y: clip;
+		transition: all 0.1s ease-in-out;
+	}
+	.cult input#join:checked ~ .list-holder > ul {
+		max-height: 18em;
+		padding: 0.2em 0;
+	}
+	.cult input#join {
+		position: relative;
+		appearance: none;
+		cursor: pointer;
+		padding-left: 1em;
+	}
+	.cult input#join::before {
+		font-family: "Nova Oval", sans-serif;
+		font-size: 1.2rem;
+		font-weight: 700;
+		content: "Join my cult!";
+		color: #888;
+	}
+	.cult input#join::after {
+		position: absolute;
+		width: 0.9em;
+		height: 0.9em;
+		top: calc(50% - 0.7em);
+		left: 105%;
+		display: block;
+		content: " ";
+		border: 4px solid #777;
+		border-left: 0;
+		border-bottom: 0;
+		border-radius: 2px;
+		transform: rotate(45deg);
+		transition: transform 0.1s ease-in-out;
+	}
+	.cult input#join:checked::after {
+		transform: rotate(135deg);
+	}
 </style>
