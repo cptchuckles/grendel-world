@@ -37,6 +37,10 @@ header h1 {
   color: #ddd;
 }
 
+header a {
+  text-decoration: none;
+}
+
 header #hamburger-helper {
   grid-area: hamburger;
 }
