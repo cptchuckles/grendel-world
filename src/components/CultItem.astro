@@ -1,9 +1,14 @@
 ---
 const { icon, url, label } = Astro.props;
-const hostname = url.split('/')[2];
+const hostname = url.split("/")[2];
 ---
 
-<li class="cult-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ProfilePage">
+<li
+	class="cult-item"
+	itemprop="itemListElement"
+	itemscope
+	itemtype="https://schema.org/ProfilePage"
+>
 	<data hidden itemprop="name">{hostname}</data>
 	<data hidden itemprop="url">{url}</data>
 	<a target="_blank" href={url}>
@@ -37,7 +42,7 @@ const hostname = url.split('/')[2];
 		border-radius: 0.2em;
 		transition: all 0.1s ease-in-out;
 	}
-	
+
 	a:hover {
 		background-color: #555;
 		color: white;
