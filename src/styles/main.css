@@ -28,13 +28,17 @@ header {
 header h1 {
   grid-area: "title";
   font-family: "Nova Cut";
-  font-size: 4rem;
+  font-size: 3rem;
   text-shadow: 2px 2px 4px gray;
   background: none;
   border-radius: 0;
   margin: 0;
   padding: 0;
   color: #ddd;
+}
+
+header h1::first-line {
+  font-size: calc(4em/3);
 }
 
 header a {
