@@ -61,9 +61,11 @@ const cultHeading = '"Find me on the internets"';
 		padding: 0.2em 0;
 	}
 	.cult input#join {
-		position: relative;
+		display: flex;
+		align-items: baseline;
 		appearance: none;
 		cursor: pointer;
+		margin: 0;
 		padding-left: 1em;
 	}
 	.cult input#join::before {
@@ -74,11 +76,9 @@ const cultHeading = '"Find me on the internets"';
 		color: #888;
 	}
 	.cult input#join::after {
-		position: absolute;
 		width: 0.9em;
 		height: 0.9em;
-		top: calc(50% - 0.7em);
-		left: 105%;
+		margin-left: 0.3em;
 		display: block;
 		content: " ";
 		border: 4px solid #777;
