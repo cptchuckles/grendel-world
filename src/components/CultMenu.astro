@@ -1,5 +1,6 @@
 ---
 import CultItem from "./CultItem.astro";
+const cultHeading = '"Find me on the internets"';
 ---
 
 <div class="cult">
@@ -17,14 +18,14 @@ import CultItem from "./CultItem.astro";
 				label="cptchuckles"
 			/>
 			<CultItem
-				icon="/twitter-logo.svg"
-				url="https://twitter.com/pt24grendel"
-				label="@pt24grendel"
-			/>
-			<CultItem
 				icon="/yt-logo.svg"
 				url="https://youtube.com/channel/UCC6f_N9nz_YsOcvyuLSbXXQ"
 				label="klayperson"
+			/>
+			<CultItem
+				icon="/twitter-logo.svg"
+				url="https://twitter.com/pt24grendel"
+				label="@pt24grendel"
 			/>
 			<CultItem
 				icon="/jitsi-logo.svg"
@@ -40,7 +41,7 @@ import CultItem from "./CultItem.astro";
 	</div>
 </div>
 
-<style>
+<style define:vars={{cultHeading}}>
 	.cult {
 		background-color: #333;
 	}
@@ -73,7 +74,7 @@ import CultItem from "./CultItem.astro";
 		font-family: "Nova Oval", sans-serif;
 		font-size: 1.2rem;
 		font-weight: 700;
-		content: "Join my cult!";
+		content: var(--cultHeading);
 		color: #888;
 	}
 	.cult input#join::after {
