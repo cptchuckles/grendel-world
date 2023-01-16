@@ -3,10 +3,12 @@ const { icon, url, label } = Astro.props;
 const hostname = url.split('/')[2];
 ---
 
-<li class="cult-item">
+<li class="cult-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ProfilePage">
+	<data hidden itemprop="name">{hostname}</data>
+	<data hidden itemprop="url">{url}</data>
 	<a target="_blank" href={url}>
 		<img src={icon} alt={`${hostname}: ${label}`} />
-		{label}
+		<data itemprop="about creator">{label}</data>
 	</a>
 </li>
 

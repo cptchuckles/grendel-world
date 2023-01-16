@@ -5,7 +5,8 @@ const cultHeading = '"Find me on the internets"';
 
 <div class="cult">
 	<input type="checkbox" id="join" aria-label="Expand cult links" />
-	<div class="list-holder">
+	<div class="list-holder" itemscope itemtype="https://schema.org/ItemList">
+		<data hidden itemprop="description">External links to Grendel across the internet</data>
 		<ul>
 			<CultItem
 				icon="/github-logo.svg"
