@@ -23,7 +23,7 @@ header {
 
 header h1 {
   font-family: "Nova Cut";
-  font-size: 3rem;
+  font-size: 13vw;
   text-shadow: 2px 2px 4px gray;
   background: none;
   border-radius: 0;
@@ -31,10 +31,6 @@ header h1 {
   max-width: 1200px;
   padding: 0;
   color: #ddd;
-}
-
-header h1::first-line {
-  font-size: calc(4em / 3);
 }
 
 header a {
@@ -75,6 +71,12 @@ h6 {
   margin-left: 0.7rem;
 }
 
+@media screen and (max-width: 375px) {
+  header h1 {
+    font-size: 3em;
+  }
+}
+
 @media screen and (max-width: 425px) {
   :root {
     font-size: 12pt;
@@ -83,7 +85,7 @@ h6 {
 
 @media screen and (min-width: 720px) {
   header h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 
