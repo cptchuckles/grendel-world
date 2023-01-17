@@ -1,8 +1,10 @@
 ---
+import CultMenu from "../components/CultMenu.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="Welcome frens">
+	<CultMenu slot="body-menu" />
 	<p itemscope itemtype="https://schema.org/WebSite">
 		<data hidden itemprop="url">https://grendel.world</data>
 		<data itemprop="abstract">

@@ -1,5 +1,4 @@
 ---
-import CultMenu from "../components/CultMenu.astro";
 const { pageTitle } = Astro.props;
 ---
 
@@ -20,7 +19,7 @@ const { pageTitle } = Astro.props;
 		</header>
 
 		<div class="menu">
-			<CultMenu />
+			<slot name="body-menu" />
 		</div>
 
 		<main itemscope itemtype="WebPage">
