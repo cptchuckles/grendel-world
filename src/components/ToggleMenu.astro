@@ -1,5 +1,5 @@
 ---
-let { heading, headingColor, chevronColor, openSize } = Astro.props;
+let { heading, headingColor, chevronColor, openSize, autoExpand } = Astro.props;
 
 heading = `"${heading}"`;
 headingColor ||= "#666";
@@ -7,7 +7,7 @@ chevronColor ||= "#666";
 openSize ||= "fit-content";
 ---
 
-<div class="toggleMenu">
+<div class={`toggleMenu ${autoExpand && "expand"}`}>
 	<input type="checkbox" id="toggle" aria-label="Expand menu items" />
 	<div class="list-holder">
 		<slot />
@@ -60,13 +60,13 @@ openSize ||= "fit-content";
 	}
 
 	@media screen and (min-width: 1200px) {
-		.toggleMenu input#toggle {
+		.toggleMenu.expand input#toggle {
 			cursor: default;
 		}
-		.toggleMenu input#toggle::after {
+		.toggleMenu.expand input#toggle::after {
 			display: none;
 		}
-		.toggleMenu .list-holder {
+		.toggleMenu.expand .list-holder {
 			max-height: fit-content;
 		}
 	}
