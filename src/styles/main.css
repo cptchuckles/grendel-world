@@ -112,8 +112,6 @@ h6 {
   .menu {
     margin: 2em 2em auto 2em;
     grid-area: menu;
-    border-radius: 0.5em;
-    overflow: clip;
     max-width: 40ch;
   }
 }

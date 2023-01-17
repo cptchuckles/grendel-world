@@ -1,13 +1,19 @@
 ---
 import CultItem from "./CultItem.astro";
-const cultHeading = '"Find me on the internets"';
+import ToggleMenu from "./ToggleMenu.astro";
 ---
 
 <div class="cult">
-	<input type="checkbox" id="join" aria-label="Expand cult links" />
-	<div class="list-holder" itemscope itemtype="https://schema.org/ItemList">
-		<data hidden itemprop="description">External links to Grendel across the internet</data>
-		<ul>
+	<ToggleMenu
+		heading="Find me on the internets"
+		headingColor="#888"
+		chevronColor="#777"
+		openSize="16em"
+	>
+		<ul itemscope itemtype="https://schema.org/ItemList">
+			<data hidden itemprop="description">
+				External links to Grendel across the internet
+			</data>
 			<CultItem
 				icon="/github-logo.svg"
 				url="https://github.com/cptchuckles"
@@ -34,86 +40,24 @@ const cultHeading = '"Find me on the internets"';
 				label="'electronic' mail???"
 			/>
 		</ul>
-	</div>
+	</ToggleMenu>
 </div>
 
-<style define:vars={{cultHeading}}>
+<style>
 	.cult {
 		background-color: #333;
-	}
-	.cult .list-holder {
-		margin: 0;
-		padding-left: 2em;
 		color: #ddd;
 	}
 	.cult ul {
 		display: block;
-		padding: 0;
 		margin: 0;
-		max-height: 0;
-		width: fit-content;
-		padding-right: auto;
-		overflow-y: clip;
-		transition: all 0.1s ease-in-out;
-	}
-	.cult input#join:checked ~ .list-holder > ul {
-		max-height: 18em;
-		padding: 0.2em 0;
-	}
-	.cult input#join {
-		display: flex;
-		align-items: baseline;
-		appearance: none;
-		cursor: pointer;
-		margin: 0;
-		padding-left: 1em;
-	}
-	.cult input#join::before {
-		font-family: "Nova Oval", sans-serif;
-		font-size: 1.2rem;
-		font-weight: 700;
-		content: var(--cultHeading);
-		color: #888;
-	}
-	.cult input#join::after {
-		width: 0.9em;
-		height: 0.9em;
-		margin-left: 0.3em;
-		display: block;
-		content: " ";
-		border: 4px solid #777;
-		border-left: 0;
-		border-bottom: 0;
-		border-radius: 2px;
-		transform: rotate(45deg);
-		transition: transform 0.1s ease-in-out;
-	}
-	.cult input#join:checked::after {
-		transform: rotate(135deg);
+		padding: 0.2em 2em;
 	}
 
 	@media screen and (min-width: 1200px) {
 		.cult {
 			padding: 1em;
-		}
-		.cult input#join {
-			cursor: default;
-			padding: 0;
-		}
-		.cult input#join::after {
-			display: none;
-		}
-		.cult ul {
-			max-height: fit-content;
-			min-width: fit-content;
-			width: 100%;
-			padding: 0.2em 2em;
-		}
-		.cult input#join:checked ~ .list-holder > ul {
-			padding: 0.2em 2em;
-		}
-		.cult .list-holder {
-			padding: 0;
+			border-radius: 0.6em;
 		}
 	}
 </style>

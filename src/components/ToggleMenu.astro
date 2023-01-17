@@ -1,0 +1,73 @@
+---
+let { heading, headingColor, chevronColor, openSize } = Astro.props;
+
+heading = `"${heading}"`;
+headingColor ||= "#666";
+chevronColor ||= "#666";
+openSize ||= "fit-content";
+---
+
+<div class="toggleMenu">
+	<input type="checkbox" id="toggle" aria-label="Expand menu items" />
+	<div class="list-holder">
+		<slot />
+	</div>
+</div>
+
+<style define:vars={{ heading, headingColor, chevronColor, openSize }}>
+	.toggleMenu input#toggle {
+		margin: 0 0 0 1em;
+		display: flex;
+		align-items: baseline;
+		appearance: none;
+		cursor: pointer;
+	}
+	.toggleMenu input#toggle::before {
+		font-family: "Nova Oval", sans-serif;
+		font-size: 1.2rem;
+		font-weight: 700;
+		content: var(--heading);
+		color: var(--headingColor);
+	}
+	.toggleMenu input#toggle::after {
+		display: block;
+		content: " ";
+		width: 0.9em;
+		height: 0.9em;
+		border: 0.4em solid var(--chevronColor);
+		border-left: none;
+		border-bottom: none;
+		border-radius: 0.2em;
+		margin-left: 0.3em;
+		transform: rotate(45deg);
+		transition: all 0.1s ease-in-out;
+	}
+	.toggleMenu input#toggle:checked::after {
+		transform: rotate(135deg);
+	}
+
+	.toggleMenu .list-holder {
+		display: block;
+		max-height: 0;
+		overflow: clip;
+		transition: all 0.1s ease-in-out;
+		margin: 0;
+		padding: 0 auto;
+	}
+	.toggleMenu input#toggle:checked ~ .list-holder {
+		max-height: var(--openSize);
+		padding: 0.2em auto;
+	}
+
+	@media screen and (min-width: 1200px) {
+		.toggleMenu input#toggle {
+			cursor: default;
+		}
+		.toggleMenu input#toggle::after {
+			display: none;
+		}
+		.toggleMenu .list-holder {
+			max-height: fit-content;
+		}
+	}
+</style>
