@@ -91,4 +91,29 @@ const cultHeading = '"Find me on the internets"';
 	.cult input#join:checked::after {
 		transform: rotate(135deg);
 	}
+
+	@media screen and (min-width: 1200px) {
+		.cult {
+			padding: 1em;
+		}
+		.cult input#join {
+			cursor: default;
+			padding: 0;
+		}
+		.cult input#join::after {
+			display: none;
+		}
+		.cult ul {
+			max-height: fit-content;
+			min-width: fit-content;
+			width: 100%;
+			padding: 0.2em 2em;
+		}
+		.cult input#join:checked ~ .list-holder > ul {
+			padding: 0.2em 2em;
+		}
+		.cult .list-holder {
+			padding: 0;
+		}
+	}
 </style>

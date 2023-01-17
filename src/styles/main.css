@@ -3,12 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Cut&family=Nova+Oval&family=Averia+Serif+Libre:ital,wght@0,200;0,400;0,700;1,400;1,700&&display=swap");
 /* Page dimensions and shit */
 /* Colors */
-:root {
-  font-size: 14pt;
-}
-
 * {
   box-sizing: border-box;
+}
+
+:root {
+  font-size: 14pt;
 }
 
 html {
@@ -18,35 +18,27 @@ html {
 }
 
 header {
-  display: grid;
-  grid-template: "title hamburger"
-                 "menu menu";
-  /* border-bottom: 1px solid gray; */
   background-color: #444;
 }
 
 header h1 {
-  grid-area: "title";
   font-family: "Nova Cut";
   font-size: 3rem;
   text-shadow: 2px 2px 4px gray;
   background: none;
   border-radius: 0;
-  margin: 0;
+  margin: auto;
+  max-width: 1200px;
   padding: 0;
   color: #ddd;
 }
 
 header h1::first-line {
-  font-size: calc(4em/3);
+  font-size: calc(4em / 3);
 }
 
 header a {
   text-decoration: none;
-}
-
-header #hamburger-helper {
-  grid-area: hamburger;
 }
 
 body {
@@ -72,4 +64,47 @@ h6 {
   border-radius: 0.5em;
   margin-block-start: 1.5em;
   margin-left: 0.5em;
+}
+
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 12pt;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "content menu";
+  }
+  header {
+    grid-area: header;
+  }
+  header h1 {
+    font-size: 5rem;
+    padding: 0.5em 0;
+  }
+  main {
+    display: block;
+    grid-area: content;
+    max-width: 1024px;
+    margin: 0 0.5em 0 auto;
+    padding-left: 2em;
+  }
+  .menu {
+    margin: 2em 2em auto 2em;
+    grid-area: menu;
+    border-radius: 0.5em;
+    overflow: clip;
+    max-width: 40ch;
+  }
 }
