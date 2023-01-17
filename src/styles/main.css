@@ -52,6 +52,15 @@ main {
   margin: 0 1em;
 }
 
+code {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: black;
+  background-color: #999;
+  border-radius: 0.35em;
+  padding: 0.2em 0.4em;
+}
+
 h1,
 h2,
 h3,
