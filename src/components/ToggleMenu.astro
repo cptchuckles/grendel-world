@@ -7,7 +7,7 @@ chevronColor ||= "#666";
 openSize ||= "fit-content";
 ---
 
-<div class={`toggleMenu ${autoExpand && "expand"}`}>
+<div class:list={['toggleMenu', { expand: autoExpand }]}>
 	<input type="checkbox" id="toggle" aria-label="Expand menu items" />
 	<div class="list-holder">
 		<slot />
