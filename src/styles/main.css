@@ -103,6 +103,7 @@ h6 {
   header h1 {
     font-size: 5rem;
     padding: 0.5em 0;
+    border-bottom: 0.2em solid #333;
   }
   main {
     display: block;
