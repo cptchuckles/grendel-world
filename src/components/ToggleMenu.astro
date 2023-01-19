@@ -1,9 +1,10 @@
 ---
-let { heading, headingColor, chevronColor, openSize, autoExpand } = Astro.props;
+let { heading, headingColor, chevronColor, openSize, autoExpand, foldSpeed } = Astro.props;
 
 heading = `"${heading}"`;
 headingColor ||= "#666";
 chevronColor ||= "#666";
+foldSpeed ||= ".1s";
 openSize ||= "fit-content";
 ---
 
@@ -14,7 +15,7 @@ openSize ||= "fit-content";
 	</div>
 </div>
 
-<style define:vars={{ heading, headingColor, chevronColor, openSize }}>
+<style define:vars={{ heading, headingColor, chevronColor, openSize, foldSpeed }}>
 	.toggleMenu input#toggle {
 		margin: 0 0 0 1em;
 		display: flex;
@@ -28,6 +29,7 @@ openSize ||= "fit-content";
 		font-weight: 700;
 		content: var(--heading);
 		color: var(--headingColor);
+		transition: all var(--foldSpeed) ease-in-out;
 	}
 	.toggleMenu input#toggle::after {
 		display: block;
@@ -40,17 +42,21 @@ openSize ||= "fit-content";
 		border-radius: 0.2em;
 		margin-left: 0.3em;
 		transform: rotate(45deg);
-		transition: all 0.1s ease-in-out;
+		transition: all var(--foldSpeed) ease-in-out;
 	}
 	.toggleMenu input#toggle:checked::after {
 		transform: rotate(135deg);
+		margin-left: -105%;
+	}
+	.toggleMenu input#toggle:checked::before {
+		margin-left: 10%;
 	}
 
 	.toggleMenu .list-holder {
 		display: block;
 		max-height: 0;
 		overflow: clip;
-		transition: all 0.1s ease-in-out;
+		transition: all var(--foldSpeed) ease-in-out;
 		margin: 0;
 		padding: 0 auto;
 	}
@@ -63,6 +69,9 @@ openSize ||= "fit-content";
 		.toggleMenu.expand input#toggle {
 			cursor: default;
 			outline: none;
+		}
+		.toggleMenu.expand input#toggle::before {
+			margin-left: 0.3em;
 		}
 		.toggleMenu.expand input#toggle::after {
 			display: none;
