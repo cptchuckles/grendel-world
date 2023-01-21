@@ -1,4 +1,5 @@
 ---
+import Banner from '../components/Banner.astro';
 import '../styles/main.css';
 const { pageTitle } = Astro.props;
 ---
@@ -12,11 +13,7 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle} - Grendel World</title>
 	</head>
 	<body>
-		<header role="banner">
-			<a href="/">
-				<h1>Grendel World</h1>
-			</a>
-		</header>
+		<Banner />
 
 		<div class="menu">
 			<slot name="body-menu" />

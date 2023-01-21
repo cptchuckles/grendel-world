@@ -17,26 +17,6 @@ html {
   font-weight: 400;
 }
 
-header {
-  background-color: #444;
-}
-
-header h1 {
-  font-family: "Nova Cut";
-  font-size: 13vw;
-  text-shadow: 2px 2px 4px gray;
-  background: none;
-  border-radius: 0;
-  margin: auto;
-  max-width: 1200px;
-  padding: 0;
-  color: #ddd;
-}
-
-header a {
-  text-decoration: none;
-}
-
 body {
   min-width: 375px;
   min-height: 100vh;
@@ -71,21 +51,9 @@ h6 {
   margin-left: 0.7rem;
 }
 
-@media screen and (max-width: 375px) {
-  header h1 {
-    font-size: 3em;
-  }
-}
-
 @media screen and (max-width: 425px) {
   :root {
     font-size: 12pt;
-  }
-}
-
-@media screen and (min-width: 720px) {
-  header h1 {
-    font-size: 5rem;
   }
 }
 
@@ -96,14 +64,6 @@ h6 {
     grid-template-areas:
       "header header"
       "content menu";
-  }
-  header {
-    grid-area: header;
-  }
-  header h1 {
-    font-size: 5rem;
-    padding: 0.5em 0;
-    border-bottom: 0.2em solid #333;
   }
   main {
     display: block;

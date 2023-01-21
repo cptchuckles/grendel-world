@@ -1,0 +1,145 @@
+---
+---
+
+<header>
+	<a role="banner" href="/">
+		<h1>Grendel World</h1>
+	</a>
+	<input type="checkbox" id="toggle" />
+	<div class="hamburger">
+		<nav aria-label="Site navigation">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/about">About</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style>
+	header {
+		background-color: #444;
+		display: grid;
+		grid-template-areas:
+			"banner toggle"
+			"links links";
+	}
+
+	header h1 {
+		grid-area: banner;
+		font-family: "Nova Cut";
+		font-size: 12vw;
+		text-shadow: 2px 2px 4px gray;
+		background: none;
+		border-radius: 0;
+		margin: auto;
+		max-width: 1200px;
+		padding: 0;
+		color: #ddd;
+	}
+
+	header > a {
+		text-decoration: none;
+	}
+
+	input#toggle {
+		grid-area: toggle;
+		appearance: none;
+	}
+	input#toggle::after {
+		content: "≡";
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		font-size: 12vw;
+		cursor: pointer;
+		text-align: center;
+		color: #999;
+	}
+
+	.hamburger {
+		grid-area: links;
+		max-height: 0;
+		padding: 0;
+		overflow: clip;
+		transition: all .1s ease-in-out;
+	}
+	input#toggle:checked ~ .hamburger {
+		max-height: 9em;
+		padding: .2em 0;
+	}
+
+	.hamburger ul {
+		diplay: flex;
+		flex-direction: column;
+		margin: 0 1em;
+		padding: 0;
+	}
+	.hamburger li {
+		display: block;
+		list-style: none;
+		margin: 0.3em .8em;
+	}
+
+	.hamburger li a, .hamburger li a:visited {
+		display: block;
+		padding: 0.5em;
+		text-decoration: none;
+		color: #999;
+		background-color: #333;
+		border-radius: 0.2em;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		transition: all .1s ease-in-out;
+	}
+
+	.hamburger li a:hover {
+		background-color: #555;
+		color: #222;
+	}
+
+	@media screen and (max-width: 375px) {
+		header h1 {
+			font-size: 3em;
+		}
+	}
+
+	@media screen and (min-width: 720px) {
+		header > a {
+			display: flex;
+		}
+		header h1 {
+			font-size: 5rem;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		header {
+			display: block;
+			grid-area: header;
+		}
+		header > a {
+			display: inline;
+		}
+		header h1 {
+			padding: 0.5em 0;
+		}
+		header input#toggle {
+			display: none;
+		}
+		header .hamburger {
+			max-height: 3em;
+			background-color: #333;
+		}
+		header .hamburger ul {
+			display: flex;
+			flex-direction: row;
+			max-width: 1200px;
+			margin: auto;
+		}
+	}
+</style>
