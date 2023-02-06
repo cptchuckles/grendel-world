@@ -11,8 +11,8 @@ const hostname = url.split("/")[2];
 >
 	<data hidden itemprop="name">{hostname}</data>
 	<data hidden itemprop="url">{url}</data>
-	<a target="_blank" href={url}>
-		<img src={icon} alt={`${hostname}: ${label}`} />
+	<a target="_blank" aria-label={`${hostname}: ${label}`} href={url}>
+		<img src={icon} alt={`${hostname} logo`} />
 		<data itemprop="about creator">{label}</data>
 	</a>
 </li>
