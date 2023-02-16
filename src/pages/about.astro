@@ -1,0 +1,93 @@
+---
+import Definition from "../components/Definition.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="About me">
+	<p>
+		I'm a self-taught programmer,
+		lover of <Definition description="Free as in Freedom">free</Definition> software,
+		Artix Linux user <em>btw</em> and <code>{"${otherThings}"}</code> too.
+	</p>
+	<p>
+		I'm sure there's plenty more that I could write about myself, but I have
+		no idea what it would be. Just imagine that I am blowing your mind right
+		now.
+	</p>
+
+	<h2>Programming</h2>
+	<p>
+		Here are some of my favorite programming languages and technology
+		stacks, along with maybe a few examples of the things I have done with
+		them.
+	</p>
+
+	<ul style="padding-left: 20px;">
+	<li>
+	<strong>Astro</strong>
+
+	<p>
+		I build my website with
+		<a target="_blank" href="https://astro.build">Astro</a>,
+		a component-based framework that lets me use HTML, CSS and JavaScript together in an
+		intuitive way that feels like the way it was meant to be used.  I like that I have granular control
+		over the hydration of dynamic elements in my pages, and that I can set it up for static site generation
+		or server-side rendering, depending on what I end up needing for my website.
+	</p>
+	</li>
+
+	<li>
+	<strong>Rust</strong>
+	<p>
+		My first foray into
+		<a target="_blank" href="https://adventofcode.com"><em>Advent of Code</em></a>
+		was in 2022, and I decided to tackle it using Rust, in order to become more
+		acquainted with the language.  You can see
+		<a target="_blank" href="https://github.com/cptchuckles/adventofcode2022">my Github repository</a>
+		about it.
+	</p>
+
+	<p>
+		Aside from simple challenges, I've decided to exercise writing GUI
+		applications with the
+		<a target="_blank" href="https://github.com/iced-rs/iced">Iced framework</a>
+		by using it to create
+		<a target="_blank" href="https://github.com/cptchuckles/iced-mines-rs">Minesweeper</a>.
+	</p>
+
+	<p>
+		I also wrote a
+		<a target="_blank" href="https://gitlab.com/cptchuckles/rotn-rs"><em>Caesar cipher</em> utility</a>,
+		but since I'm <em>built different</em> and decided that I'm too cool to use
+		<Definition description="Rust's package and project management utility">Cargo,</Definition>
+		I wrote a Makefile instead, which does what Cargo would have done, only worse, and not as well, and badder.
+	</p>
+	</li>
+
+	<li>
+	<strong>Godot</strong>
+	<p>
+		<a target="_blank" href="https://godotengine.org">The Godot game engine</a>
+		was something I started using only after <em>years</em> of game development dabbling in other engines
+		and frameworks, including <em>DarkBASIC</em>, <em>GameMaker</em> (from version 6.0 all the way up to Studio 2),
+		<em>Unity</em> and <em>Unreal 4</em>.  Like any good hobbyist, I of course never really backed up
+		any of my work in those engines and have nothing to show for it, so don't expect a huge portfolio of
+		fantastic games from those engines.
+	</p>
+	<p>
+		When I started using Godot, the first thing I actually did was start making
+		<a target="_blank" href="https://www.youtube.com/playlist?list=PLzTbnQMqpYHV-AXGm5SvS-8oNrZn4UpA5">
+			a 3D tutorial
+		</a>, although since I myself was a beginner, I abandoned that series as my growing skills make my
+		poor design choices more apparent.  I feel like remaking that series at some point, in C#, with better
+		architecture and probably using Godot 4.0, which is slated to release in early 2023.
+	</p>
+	<p>
+		One of my favorite projects using Godot has been with my Quintrix cohort creating
+		<a target="_blank" href="https://www.sharpscape.xyz/GameWorld">SharpScape</a>, an online multiplayer game
+		created in Godot, exported to HTML5 and embedded into an ASP.NET Blazor website
+		with an accompanying community forum.
+	</p>
+	</li>
+	</ul>
+</BaseLayout>
