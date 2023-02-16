@@ -1,0 +1,41 @@
+---
+const { description } = Astro.props;
+---
+
+<span class="definition">
+	<span class="definition-term"><slot /></span>
+	<span class="definition-description">{description}</span>
+</span>
+
+<style>
+	.definition {
+		display: inline;
+		position: relative;
+		margin: 0;
+		padding: 0;
+	}
+	.definition .definition-term {
+		display: inline;
+		font-style: italic;
+		color: #444;
+		text-decoration: underline dotted;
+		cursor: pointer;
+	}
+	.definition .definition-description {
+		display: none;
+		position: absolute;
+		bottom: 1.2em;
+		left: 0;
+		white-space: nowrap;
+		width: fit-content;
+		background-color: #fea;
+		border: 1px solid #ea0;
+		color: #333;
+		border-radius: 2px;
+		padding: 0.2em;
+		font-size: 0.8em;
+	}
+	.definition .definition-term:hover ~ .definition-description {
+		display: block;
+	}
+</style>
