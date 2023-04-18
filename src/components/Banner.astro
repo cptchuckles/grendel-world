@@ -1,4 +1,6 @@
 ---
+const hamburger = "/hamburger.svg";
+const hamburger_url = `url(${hamburger})`;
 ---
 
 <header>
@@ -17,7 +19,7 @@
 	</div>
 </header>
 
-<style>
+<style define:vars={{ hamburger_url }}>
 	header {
 		background-color: #444;
 		display: grid;
@@ -48,7 +50,10 @@
 		appearance: none;
 	}
 	input#toggle::after {
-		content: "≡";
+		content: " ";
+		background-image: var(--hamburger_url);
+		background-repeat: no-repeat;
+		background-position: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
