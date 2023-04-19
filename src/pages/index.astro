@@ -1,6 +1,7 @@
 ---
 import CultMenu from "../components/CultMenu.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PgpPublicKey from "../components/PgpPublicKey.astro";
 ---
 
 <BaseLayout pageTitle="Welcome frens">
@@ -33,4 +34,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		so anything you do or say can and WILL be used against you in a court of
 		law—in minecraft.
 	</p>
+	
+	<h2>PGP Public Key</h2>
+	<p>If you want to contact me securely, you can use my PGP public key to encrypt your messages.</p>
+	<PgpPublicKey />
 </BaseLayout>
